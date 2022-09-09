@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form action="#" method="get">
+        <table>
+            <tbody>
+                <tr>
+                    <td>User name</td>
+                    <td><input id="name" name="name" required type="text"></td>
+                </tr>
+                <tr>
+                    <td>User age</td>
+                    <td><input id="age" onchange="valiage()" name="age" required type="number"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="Register">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+    <script>
+       document.getElementById("name").setCustomValidity("Valtech needs you to enter your full name");
+       document.getElementById("age").setCustomValidity("Enter your age");
+
+       function valiage(){
+            if(document.getElementById("age").value<18){
+                document.getElementById("age").setCustomValidity("You're too young to join us");
+            }else if(document.getElementById("age").value>28){
+                document.getElementById("age").setCustomValidity("You're too old to join us");
+            }else{
+                document.getElementById("age").setCustomValidity("");
+            }
+       }
+    </script>
+</body>
+</html>

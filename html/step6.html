@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Current Time: <output id="op"></output></h1>
+    <video height="500px" width="500px" loop poster="images/deadpool.jpg" id="vid">
+        <source src="html5.mp4">
+        <source src="html5.webm">
+    </video>
+    <button onclick="vidplay()">play</button>
+    <button onclick="vidpause()">pause</button>
+    <button onclick="vidstop()">stop</button>
+    <button onclick="vidrewind()">rewind</button>
+    <button onclick="vidforward()">forward</button>
+
+    <script>
+        setInterval(function(){
+            document.getElementById("op").value=document.getElementById("vid").currentTime;
+        },10);
+
+        function vidplay(){
+            document.getElementById("vid").play();
+        }    
+        function vidpause(){
+            document.getElementById("vid").pause();
+        }    
+        function vidstop(){
+            document.getElementById("vid").currentTime=0;
+            document.getElementById("vid").pause();
+        }    
+        function vidrewind(){
+            //document.getElementById("vid").currentTime-=1;        shortcut
+            document.getElementById("vid").currentTime=document.getElementById("vid").currentTime-1;
+        }    
+        function vidforward(){
+            //document.getElementById("vid").currentTime+=1;        shortcut
+            document.getElementById("vid").currentTime=document.getElementById("vid").currentTime+1;
+        }    
+    </script>
+</body>
+</html>

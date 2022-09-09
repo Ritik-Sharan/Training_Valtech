@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //var user=null; for only one window in a browser
+        function storeinfo(){
+            window.localStorage.user=document.getElementById("rahul").value;
+        }
+        function getinfo(){
+            document.getElementById("log").textContent=window.localStorage.user;
+        }
+    </script>
+</head>
+<body>
+    <input id="rahul" type="text">
+    <button onclick="storeinfo()">Add user name</button>
+    <button onclick="getinfo()">Get user name</button>
+    <br>
+    <h2>User Name is: <span id="log"></span></h2>
+</body>
+</html>

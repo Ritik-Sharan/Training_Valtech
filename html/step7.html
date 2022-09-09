@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Current Time: <output id="op"></output></h1>
+    <audio height="500px" width="500px" id="aud">
+        <source src="html5.mp4">
+    </audio>
+    <button onclick="audplay()">play</button>
+    <button onclick="audpause()">pause</button>
+    <button onclick="audstop()">stop</button>
+    <button onclick="audrewind()">rewind</button>
+    <button onclick="audforward()">forward</button>
+    <button onclick="audincrease()">increase volm</button>
+    <button onclick="auddecrease()">decrease volm</button>
+
+    <script>
+        setInterval(function(){
+            document.getElementById("op").value=document.getElementById("aud").currentTime;
+        },10);
+
+        function audplay(){
+            document.getElementById("aud").play();
+        }    
+        function audpause(){
+            document.getElementById("aud").pause();
+        }    
+        function audstop(){
+            document.getElementById("aud").currentTime=0;
+            document.getElementById("aud").pause();
+        }    
+        function audrewind(){
+            //document.getElementById("aud").currentTime-=1;        shortcut
+            document.getElementById("aud").currentTime=document.getElementById("aud").currentTime-1;
+        }    
+        function audforward(){
+            //document.getElementById("aud").currentTime+=1;        shortcut
+            document.getElementById("aud").currentTime=document.getElementById("aud").currentTime+1;
+        }    
+        function audincrease(){
+            //document.getElementById("aud").volume+=0.1;        shortcut
+            document.getElementById("aud").volume=document.getElementById("aud").volume+0.1;
+        }    
+        function auddecrease(){
+            //document.getElementById("aud").volume-=0.1;        shortcut
+            document.getElementById("aud").volume=document.getElementById("aud").volume-0.1;
+        }    
+    </script>
+</body>
+</html>

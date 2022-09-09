@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: solid black 2px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="750px" height="800px"></canvas>
+    <script>
+        var ctx=document.getElementById("can").getContext("2d");
+
+        ctx.font="bold 40px arial";
+                ctx.fillStyle="black";
+                ctx.fillText("Valtech_ |",60,60);
+
+        ctx.font="bold 25px arial";
+                ctx.fillStyle="black";
+                ctx.fillText("Where Experiences are Engineered",265,60);
+
+        var img1=new Image();
+                img1.src="images/ready.jpg";
+                img1.onload=function(){
+
+                ctx.beginPath();
+                ctx.strokeStyle="black";
+                ctx.fillStyle="black";
+                ctx.moveTo(50,100);
+                ctx.lineTo(695,100);
+                ctx.lineTo(695,260);
+                ctx.lineTo(50,260);
+                ctx.lineTo(50,100);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.drawImage(img1,65,115,230,130);
+
+                ctx.font="bold 19px arial";
+                ctx.fillStyle="white";
+                ctx.fillText("Realising Revenue Potential by",315,130);
+                ctx.fillText("Optimising the Customer Journey and",315,155);
+                ctx.fillText("Online Experience",315,180);
+                }
+
+        var img2=new Image();
+                img2.src="images/GettyImages.jpg";
+                img2.onload=function(){
+
+                ctx.beginPath();
+                ctx.strokeStyle="black";
+                ctx.fillStyle="black";
+                ctx.moveTo(50,280);
+                ctx.lineTo(695,280);
+                ctx.lineTo(695,440);
+                ctx.lineTo(50,440);
+                ctx.lineTo(50,280);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.drawImage(img2,65,295,230,130);
+
+                ctx.font="bold 19px arial";
+                ctx.fillStyle="white";
+                ctx.fillText("Design Thinking: An Innovation Journey",315,310);
+                ctx.fillText("in 6 Phases",315,335);
+                }
+
+        var img3=new Image();
+                img3.src="images/GettyImages.jpg";
+                img3.onload=function(){
+
+                ctx.beginPath();
+                ctx.strokeStyle="black";
+                ctx.fillStyle="black";
+                ctx.moveTo(50,460);
+                ctx.lineTo(695,460);
+                ctx.lineTo(695,620);
+                ctx.lineTo(50,620);
+                ctx.lineTo(50,460);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.drawImage(img3,65,475,230,130);
+
+                ctx.font="bold 19px arial";
+                ctx.fillStyle="white";
+                ctx.fillText("Diversity & inclusion",315,490);
+                ctx.fillText("",315,515);
+                ctx.fillText("in 6 Phases",315,540);
+                ctx.fillText("in 6 Phases",315,565);
+                }
+    </script>
+</body>
+</html>

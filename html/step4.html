@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="#" method="get">      <!-- <form> tag is used to represent collection of form associated elements, where it can be editable values and can be submitted to a server-->
+        <table>
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <td>User name</td>
+                    <td><input name="name" placeholder="Enter Full name" autocomplete="off" required type="text"></td>
+                </tr>
+                <tr>
+                    <td>User e-mail</td>
+                    <td><input name="email" placeholder="E-mail address" autocomplete="off" pattern="\+@\+" required type="email"></td>
+                </tr>
+                <tr>
+                    <td>User phone</td>
+                    <td><input autofocus name="number" placeholder="Phn no." autocomplete="off" required title="###-###-####" pattern="\d{3}-\d{3}-\d{4}" type="tel"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="Register">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    <input list="browsers" name="browser" id="browser">
+  <datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+  <input type="submit">
+    </form>
+
+</body>
+</html>

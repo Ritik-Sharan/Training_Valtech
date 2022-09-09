@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+        border: 2px black solid;
+        margin: 50px;
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="600px" height="600px"></canvas>
+    <script>
+        var ctx=document.getElementById("can").getContext("2d");
+
+            ctx.beginPath();
+            ctx.strokeStyle="black";
+            ctx.fillStyle="burlywood";
+            ctx.moveTo(100,280);
+            ctx.lineTo(500,280);
+            ctx.lineTo(400,400);
+            ctx.lineTo(200,400);
+            ctx.lineTo(100,280);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.font="bold 30px arial";
+            ctx.fillStyle="black";
+            ctx.fillText("valtech_",250,360);
+
+            ctx.beginPath();
+            ctx.fillStyle="black";
+            ctx.arc(145,300,15,0,(Math.PI/180)*360,true);
+            ctx.stroke();
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle="white";
+            ctx.arc(145,300,10,0,(Math.PI/180)*360,true);
+            ctx.stroke();
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.strokeStyle="orange";
+            ctx.fillStyle="red";
+            ctx.moveTo(300,80);
+            ctx.lineTo(300,180);
+            ctx.lineTo(400,80)
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle="black";
+            ctx.fillStyle="black";
+            ctx.moveTo(290,80);
+            ctx.lineTo(290,280);
+            ctx.lineTo(300,280);
+            ctx.lineTo(300,80);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle="blue";
+            ctx.fillStyle="lightseagreen";
+            ctx.moveTo(600,400);
+            ctx.lineTo(600,400);
+            ctx.lineTo(600,600);
+            ctx.lineTo(0,600);
+            ctx.lineTo(0,400);
+
+            setInterval(function(){
+            //ctx.clearRect(0,0,400,400)
+            ctx.beginPath();
+           var cirX=Math.round(Math.random()*600);
+           var cirY=Math.round(Math.random()*600);
+           var cirR=Math.round(Math.random()*50);
+
+           var red=Math.round(Math.random()*200);
+           var green=Math.round(Math.random()*200);
+           var blue=Math.round(Math.random()*200);
+           var alpha=Math.random();
+
+           ctx.fillStyle="rgba(0,"+green+","+blue+","+alpha+")";
+           ctx.arc(cirX,cirY+400,cirR,0,(Math.PI/180)*360,true);
+           ctx.fill();
+           ctx.closePath();
+        },25);
+
+          
+
+            ctx.fill();
+            ctx.stroke();
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <!-- 
+        if IE<9,
+        we need to create element for user defined tags for specific browsers to recognize those tags
+
+         <script>
+            document.createElement("header");
+            document.createElement("footer");
+            document.createElement("main");
+            document.createElement("nav");
+            document.createElement("section");
+            document.createElement("article");
+        </script>
+
+    -->
+    <style>
+        body{
+            border: 0.5cm;
+            border-style: double;
+        }
+        header{
+            background-color: yellow;
+            margin: 0.20cm;
+            display: block;
+        }
+        nav{
+            background-color: green;
+            margin: 0.20cm;
+            display: block;
+        }
+        main{
+            background-color: blue;
+            margin: 0.20cm;
+            display: block;
+        }
+        article{
+            background-color: yellowgreen;
+            margin: 0.20cm;
+            display: block;
+        }
+        footer{
+            background-color: gray;
+            margin: 0.20cm;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>    <!-- syn-> header+nav+(main>section>article>article{lorem*}*3)+footer-->
+        <hgroup>
+            <h1>Welcome to Valtech</h1>
+            <h2>where experiences are engineered</h2>
+        </hgroup>
+    </header>
+    <nav>
+        <h1>nav</h1>
+    </nav>
+    <main>
+        <section>
+            <article>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos eius fugit, quia saepe harum tenetur culpa numquam at officiis fuga dolorem consequuntur ea, quod assumenda delectus? Placeat fugiat voluptatem tempore?</article>
+            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum fugit maxime voluptatibus quas expedita, tempora totam. Vel eaque quisquam ea officia mollitia rerum? Vel recusandae impedit reiciendis doloribus, repellat atque.</article>
+            <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia aliquam enim eius fuga autem quam saepe quas aperiam, quasi dolor rem sunt quae, nam sint ipsum at dolore vel dolorem.</article>
+        </section>
+    </main>
+    <footer>
+        &copy; All rightes reserved to Valtech India
+    </footer>
+</body>
+</html>
