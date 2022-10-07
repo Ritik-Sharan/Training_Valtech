@@ -1,0 +1,51 @@
+import { useEffect,useState } from "react";
+import { getAllMovies, deleteMovie } from "../service/movieservice";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import EditMovie from "./editmovie";
+
+export default function MovieList(){
+    const [movie, setMovie] = useState([]);
+    useEffect(() => {
+        getMovies();
+    },[])
+
+    const getMovies = async () => {
+        const response = await getAllMovies();
+        setMovie(response.data);
+        getMovies();
+        console.log(movie);
+    }
+     const deleteData = async (id) => {
+        await deleteMovie(id);
+        getMovies();
+        alert("Deleted !!")
+     }
+
+    return(
+        <div>
+            <table className="table table-bordered table-striped table-hover" >
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {movie.map((obj) =>
+                        <tr>
+                            <td>{obj.id}</td>
+                            <td>{obj.name}</td>
+                            <td>{obj.type}</td>
+                            <td><EditMovie></EditMovie></td>
+                            <td><input onClick={()=> deleteData(obj.id)} type="button" value="Delete"></input></td>
+                        </tr>
+                        )
+                    }
+                </tbody>
+            </table>
+        </div>
+    )
+}
