@@ -1,0 +1,66 @@
+import React, { useEffect, useState } from 'react';
+import { getAllMovies,editMovie} from '../service/movieservice';  
+import { useHistory } from 'react-router-dom';
+
+const initialValue = {
+    id: "",
+    name: "",
+    type: ""
+}
+
+const EditMovie = () => {
+
+    const [movie, setMovie] = useState(initialValue);
+    const {id ,name, type} = movie;
+
+    useEffect(() => {
+        loadMovieData();
+    },[]);
+
+    const loadMovieData = async () =>{
+        const response = await getAllMovies(id);
+        setMovie(response.data);
+    }
+
+    const history = useHistory();
+
+    const onValueChange = (e) =>
+    {
+      //  console.log(e);
+      // console.log(e.target.value);
+        setMovie({...movie, [e.target.name]: e.target.value});
+        console.log(movie);
+    }
+
+    const editMovieDetails = async () =>{
+       await editMovie(id,movie);
+       history.push('/movies');
+    }
+    
+
+    return (<div>
+        <h2>Update Movie</h2>
+                <hr></hr>
+                <table>
+                    <tr>
+                        <td>Id</td>
+                        <td><input onChange={(e) => onValueChange(e)} name="id" value={id}></input></td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td><input onChange={(e) => onValueChange(e)} name="name" value={name}></input></td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td><input onChange={(e) => onValueChange(e)} name="type" value={type}></input></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input onClick={editMovieDetails} type="button" value="Update"></input></td>
+                    </tr>
+                </table>
+        </div>
+        
+    );
+}
+export default EditMovie;
